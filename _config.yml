@@ -1,8 +1,9 @@
 title: SelfbotV1
 description: Documentation for the Chat Selfbot
-theme: just-the-docs
+footer_content: 'Site by <a href="https://bjarnos.dev/">Bjarnos</a>'
 
-url: https://just-the-docs.github.io
+theme: just-the-docs
+url: https://docs.bjarnos.dev/
 
 defaults:
   - scope:

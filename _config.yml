@@ -4,5 +4,17 @@ theme: just-the-docs
 
 url: https://just-the-docs.github.io
 
+defaults:
+  - scope:
+      path: "docs"
+      type: "pages"
+    values:
+      layout: "default"
+
+enable_copy_code_button: true
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template

@@ -47,7 +47,7 @@ customlibrary2
 #### `app.py`
 This code will keep your service active 24/7. **Exact** content:
 ```py
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify
 import os
 
 app = Flask(__name__)

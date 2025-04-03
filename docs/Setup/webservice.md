@@ -35,7 +35,8 @@ When deploying the webserver:
 ### Content files
 If you did everything correct, you should have a webserver that runs python now.
 These files should be in your `main` branch:
-- `requirements.txt`, containing all python libraries required by your bot. Gunicorn and Flask are required by app.py. Format:
+#### `requirements.txt`
+Containins all python libraries required by your bot. Gunicorn and Flask are required by app.py. Format:
 ```txt
 gunicorn
 Flask==3.0.3
@@ -43,7 +44,8 @@ Flask==3.0.3
 customlibrary1
 customlibrary2
 ```
-- `app.py`, this code will keep your service permanently running. **Exact** content:
+#### `app.py`
+This code will keep your service active 24/7. **Exact** content:
 ```py
 from flask import Flask, request, jsonify
 import os
@@ -58,8 +60,10 @@ if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
 ```
-- `bot.py`, this is the customisable code of your bot! Content is not specified yet.
-- `Procfile`, this file contains your build command, add it even with build command already set, and use this content:
+#### `bot.py`
+This is the customisable code of your bot! Content is not specified yet.
+#### `Procfile`
+This file contains your build command, add it even with build command already set, and use this content:
 ```Procfile
 web: gunicorn app:app & python3 -u bot.py & wait
 ```

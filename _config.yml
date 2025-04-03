@@ -12,10 +12,31 @@ defaults:
     values:
       layout: "default"
 
+callouts_level: quiet
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
 enable_copy_code_button: true
+
+nav_enabled: true
+heading_anchors: true
+color_scheme: dark
 
 back_to_top: true
 back_to_top_text: "Back to top"
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  Owner: https://bjarnos.dev/

@@ -6,6 +6,7 @@ layout: home
 # Welcome to the documentation of the Chat Selfbot!
 [Go to Chat](https://chat.jonazwetsloot.nl/timeline){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Create your first bot](#setup){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 ---
 
 ## Collaborate

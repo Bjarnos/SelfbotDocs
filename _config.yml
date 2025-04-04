@@ -24,7 +24,7 @@ callouts:
     color: green
   note:
     title: Note
-    color: purple
+    color: grey-lt
   warning:
     title: Warning
     color: red

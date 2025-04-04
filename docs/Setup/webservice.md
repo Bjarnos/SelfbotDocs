@@ -74,5 +74,5 @@ web: gunicorn app:app & python3 -u bot.py & wait
 3. On the right top of your screen there's a button `CREATE CRONJOB`, click it
 4. Enter a title and set the `URL` to the url of your Web Service
    *(can't find the url of your Web Service? Contact me!)*
-5. Make sure the job is enabled and set the time to `Every 10 minutes` (don't use the standard 15!)
+5. Make sure the job is enabled and set the time to `Every 10 minutes` (don't use the standard 15!). If you use a different Cronjob than cron-job.org and it requires an expression, set it to `*/15 * * * *`
 6. Click `CREATE`, and you're done! Keep track of the cronjob from time to time because it might stop after failing too many times.

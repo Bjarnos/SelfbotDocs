@@ -18,7 +18,7 @@ nav_order: 2
 
 ## Step 1. Install required libraries
 
-### Create a virtual environment
+### Virtual environment
 1. Open an empty folder
 2. Add a file named `bot.py` (or anything like that, as long as it's python), and set the source to:
 ```py
@@ -27,6 +27,8 @@ print("Hello world!")
 ```
 4. Press `ctrl + shift + P`, and then select `Python: Create Environment...`
 5. Select `Venv`, the download will start and might take a short while
+
+### Terminal
 6. Press `ctrl + shift + P` again and now select `Python: Create Terminal`
 7. Run the command `.venv\Scripts\Activate` in the terminal, a green (.venv) tag will appear
 8. Go ahead and run `pip install ChatSelfbot`, this will install the newest verion of our library

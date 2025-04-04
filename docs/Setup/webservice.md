@@ -84,7 +84,7 @@ web: gunicorn app:app & python3 -u bot.py & wait
 ---
 
 ## Step 3. Your first code!
-Go to `bot.py`, set the code to this:
+Go to `bot.py`, and set the code to this:
 ```py
 import dotenv, os
 from ChatSelfbot import BotService

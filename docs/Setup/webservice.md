@@ -64,6 +64,6 @@ if __name__ == "__main__":
 This is the customisable code of your bot! Content is not specified yet.
 #### `Procfile`
 This file contains your build command, add it even with build command already set, and use this content:
-```ini
+```sh
 web: gunicorn app:app & python3 -u bot.py & wait
 ```

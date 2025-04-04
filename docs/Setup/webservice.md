@@ -37,7 +37,7 @@ If you did everything correct, you should have a webserver that runs python now.
 These files should be in your `main` branch:
 #### `requirements.txt`
 Containins all python libraries required by your bot. Gunicorn and Flask are required by app.py. Format:
-```txt
+```text
 gunicorn
 Flask==3.0.3
 
@@ -64,6 +64,6 @@ if __name__ == "__main__":
 This is the customisable code of your bot! Content is not specified yet.
 #### `Procfile`
 This file contains your build command, add it even with build command already set, and use this content:
-```Procfile
+```ini
 web: gunicorn app:app & python3 -u bot.py & wait
 ```

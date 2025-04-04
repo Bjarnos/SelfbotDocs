@@ -36,10 +36,12 @@ When deploying the webserver:
 If you did everything correct, you should have a webserver that runs python now.
 These files should be in your `main` branch:
 #### `requirements.txt`
-Containins all python libraries required by your bot. Gunicorn and Flask are required by app.py. Format:
+Containins all python libraries required by your bot. Gunicorn, Flask, python-dotenv and ChatSelfbot are required for the selfbot to work. Replace customlibrary1 and customlibrary2 with actual libraries you need. Format:
 ```text
-gunicorn
+gunicorn=23.0.0
 Flask==3.0.3
+python-dotenv=1.0.1
+ChatSelfbot
 
 customlibrary1
 customlibrary2
@@ -61,7 +63,7 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port)
 ```
 #### `bot.py`
-This is the customisable code of your bot! Content is not specified yet.
+This is the customisable code of your bot! Content will be specified in [step 3](#step-3-your-first-code)
 #### `Procfile`
 This file contains your build command, add it even with build command already set, and use this content:
 ```sh
@@ -78,3 +80,20 @@ web: gunicorn app:app & python3 -u bot.py & wait
    *(can't find the url of your Web Service? Contact me!)*
 5. Make sure the job is enabled and set the time to `Every 10 minutes` (don't use the standard 15!). If you use a different Cronjob than cron-job.org and it requires an expression, set it to `*/10 * * * *`
 6. Click `CREATE`, and you're done! Keep track of the cronjob from time to time because it might stop after failing too many times.
+
+---
+
+## Step 3. Your first code!
+Go to `bot.py`, set the code to this:
+```py
+import dotenv, os
+from ChatSelfbot import BotService
+
+dotenv.load_dotenv()
+username = os.environ.get('user')
+password = os.environ.get('pass')
+if BotService.login(username, password):
+    messages = BotService.MessageService
+    messages.create_post("Hello! I am a selfbot :D")
+```
+Now redeploy your service and go to [Chat](https://chat.jonazwetsloot.nl/timeline?sort=time), did a new message by you appear? In that case you succesfully connected selfbot, read through the rest of the documentation to create the best selfbot of them all!

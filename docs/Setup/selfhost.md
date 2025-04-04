@@ -32,7 +32,7 @@ print("Hello world!")
 8. Go ahead and run `pip install ChatSelfbot`, this will install the newest verion of our library
 9. Now run `py bot.py` in the terminal (replace bot if you used a different name)
 10. Did it print hello world without errors? Great! Now continue step 2
-    *(if there are errors, contact me!)*
+    *(If there are errors, contact me!)*
 
 ---
 

@@ -68,6 +68,8 @@ This file contains your build command, add it even with build command already se
 web: gunicorn app:app & python3 -u bot.py & wait
 ```
 
+---
+
 ## Step 2. Setting up a Cronjob
 1. Go to [https://cron-job.org/en/](https://cron-job.org/en/) and sign up/log in
 2. Navigate to the [Dashboard](https://console.cron-job.org/dashboard) (should happen automatically)

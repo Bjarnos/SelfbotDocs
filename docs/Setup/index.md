@@ -4,4 +4,4 @@ nav_order: 2
 ---
 
 # Setup Guide
-Welcome to the setup guide, please select a tutorial from the TOC below:
+Welcome to the setup guide, please select your host from the TOC below:

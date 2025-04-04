@@ -67,3 +67,12 @@ This file contains your build command, add it even with build command already se
 ```sh
 web: gunicorn app:app & python3 -u bot.py & wait
 ```
+
+## Step 2. Setting up a Cronjob
+1. Go to [https://cron-job.org/en/](https://cron-job.org/en/) and sign up/log in
+2. Navigate to [the Dashboard](https://console.cron-job.org/dashboard) (should happen automatically)
+3. On the right top of your screen there's a button `CREATE CRONJOB`, click it
+4. Enter a title and set the `URL` to the url of your Web Service
+   *(can't find the url of your Web Service? Contact me!)*
+5. Make sure the job is enabled and set the time to `Every 10 minutes` (when using render, not 15!)
+6. Click `CREATE`, and you're done! Keep track of the cronjob from time to time because it might stop after failing too many times.

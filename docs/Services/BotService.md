@@ -16,10 +16,11 @@ nav_order: 1
 
 The BotService is a [service](/docs/Services/index.md) used to control other services and your bot.
 
-Variables and functions:
-
 ## BotService.ConnectionService
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
+```py
+BotService.ConnectionService
+```
 
 A direct link to the [ConnectionService](/docs/Services/ConnectionService.md). For example code, check out the ConnectionService's documentation.
 
@@ -39,7 +40,7 @@ A direct link to the [ProfileService](/docs/Services/ProfileService.md). For exa
 ```py
 BotService.login(username : str, password : str, params : dict) -> bool
 ```
-This function allows you to log in to your account, so that you can begin with using your selfbot. Returns True or False, True is login succesful and False is login failed.
+This function allows you to log in to your account, so that you can begin with using your selfbot. Returns True or False, True means login succesful and False means login failed.
 ```py
 # Example code
 from ChatSelfbot import BotService
@@ -64,4 +65,4 @@ When set to `True`, prints every http request and it's result code in the output
 When set to `False`, the bot will ignore all of it's own messages when checking public messages/replies.
 
 ### force-first
-When you use [ConnectionService.bind_to_public_post()], the bot will run all bound functions for the last 10 minutes of messages. When `force-first` is `True`, the bot will read its own messages too (normally it won't). Use `check-own` to control the permanent reading of own messages.
+When you use [ConnectionService.start_checking_public()](/docs/Services/ConnectionService#) for the first time, the bot will run all bound functions for the last 10 minutes of messages. When `force-first` is `True`, the bot will read its own messages too (normally it won't). Use `check-own` to control the permanent reading of own messages.

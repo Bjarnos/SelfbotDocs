@@ -19,26 +19,22 @@ The BotService is a [service](/docs/Services/index.md) used to control other ser
 Variables and functions:
 
 ## BotService.ConnectionService
-V1.0.0+
-{: .text-grey-dk }
+<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 A direct link to the [ConnectionService](/docs/Services/ConnectionService.md). For example code, check out the ConnectionService's documentation.
 
 ## BotService.MessageService
-V1.0.0+
-{: .text-grey-dk }
+<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 A direct link to the [MessageService](/docs/Services/MessageService.md). For example code, check out the MessageService's documentation.
 
 ## BotService.ProfileService
-V1.0.0+
-{: .text-grey-dk }
+<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 A direct link to the [ProfileService](/docs/Services/ProfileService.md). For example code, check out the ProfileService's documentation.
 
 ## BotService.login()
-V1.0.0+
-{: .text-grey-dk }
+<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 ```py
 BotService.login(username : str, password : str, params : dict) -> bool

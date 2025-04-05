@@ -1,6 +1,6 @@
 ---
 title: BotService
-parent: Setup
+parent: Services
 nav_order: 1
 ---
 

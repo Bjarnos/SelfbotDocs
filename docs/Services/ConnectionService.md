@@ -48,11 +48,11 @@ This function will run argument `func` every time that there's replied to the me
 from ChatSelfbot import BotService
 if BotService.login("USERNAME HERE", "PASSWORD HERE"):
     connections = BotService.ConnectionService
-    def f1(message):
+    def f1(message: Classes.PublicMessage):
         message.like()
-    def f2(message):
+    def f2(message: Classes.PublicMessage):
         connections.bind_to_message_reply(message.id, f1)
     connections.bind_to_public_post(f2)
-    connections.start_checking_public()
+    connections.start_checking_public() # required!
 ```
 *Note that this example code can be done more effective with [PublicMessage.bind_to_reply()](#empty)*

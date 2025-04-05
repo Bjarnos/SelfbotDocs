@@ -57,7 +57,7 @@ Possible params, as of V1.0.0 (values set are the standard values):
 When set to `True`, prints every http request and it's result code in the output.
 
 ### check-own
-When set to `False`, the bot will ignore all of it's own messages when checking public messages/reply.
+When set to `False`, the bot will ignore all of it's own messages when checking public messages/replies.
 
 ### force-first
-When you use
+When you use [ConnectionService.bind_to_public_post()], the bot will run all bound functions for the last 10 minutes of messages. When `force-first` is `True`, the bot will read its own messages too (normally it won't). Use `check-own` to control the permanent reading of own messages.

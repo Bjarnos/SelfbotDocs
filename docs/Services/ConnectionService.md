@@ -56,3 +56,76 @@ if BotService.login("USERNAME HERE", "PASSWORD HERE"):
     connections.start_checking_public() # required!
 ```
 *Note that this example code can be done more effective with [PublicMessage.bind_to_reply()](#empty)*
+
+### ConnectionService.start_checking_public()
+<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
+
+```py
+ConnectionService.start_checking_public() -> None
+```
+You are required to run this function if you want to use bind_to_public_post() or bind_to_message_reply(), else the bot simply won't check new messages. This function won't be automated within bot startup because it's required to keep the main thread running.
+
+### ConnectionService.stop_checking_public()
+<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
+
+```py
+ConnectionService.stop_checking_public() -> None
+```
+Stops checking public. New received public messages won't be handled anymore.
+
+---
+
+## DM Service
+### ConnectionService.bind_to_any_dm()
+<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
+
+```py
+ConnectionService.bind_to_any_dm(func : function) -> None
+```
+This function will run argument `func` every time that a new DM is received (including group chats!), and pass a [DMMessage](/docs/Classes/DMMessage) as the first argument.
+```py
+# Example code, responds with "Okay!" to every DM
+from ChatSelfbot import BotService, Classes
+if BotService.login("USERNAME HERE", "PASSWORD HERE"):
+    connections = BotService.ConnectionService
+    def f1(message: Classes.DMMessage):
+        message.reply("Okay!")
+    connections.bind_to_any_dm(f1)
+    connections.start_checking_dms() # required!
+```
+*(In group messages, message.reply() will send a reply to the group, not the sender of the message)*
+
+### ConnectionService.bind_to_user_dm()
+<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
+
+```py
+ConnectionService.bind_to_user_dm(username : str, func : function) -> None
+```
+*This function DOES NOT work for group DMs!*
+This function will run argument `func` every time that a new DM is received from username, and pass a [DMMessage](/docs/Classes/DMMessage) as the first argument.
+```py
+# Example code, responds with "Okay!" to every DM from user 'Bjarnos'
+from ChatSelfbot import BotService, Classes
+if BotService.login("USERNAME HERE", "PASSWORD HERE"):
+    connections = BotService.ConnectionService
+    def f1(message: Classes.DMMessage):
+        message.reply("Okay!")
+    connections.bind_to_user_dm("Bjarnos", f1)
+    connections.start_checking_dms() # required!
+```
+
+### ConnectionService.start_checking_dms()
+<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
+
+```py
+ConnectionService.start_checking_dms() -> None
+```
+You are required to run this function if you want to use bind_to_any_dm() or bind_to_user_dm(), else the bot simply won't check new dm messages. This function won't be automated within bot startup because it's required to keep the main thread running.
+
+### ConnectionService.stop_checking_dms()
+<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
+
+```py
+ConnectionService.stop_checking_dms() -> None
+```
+Stops checking dms. New received DM messages won't be handled anymore.

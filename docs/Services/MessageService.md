@@ -27,8 +27,9 @@ The rate limit (set by Chat, not by selfbot) is 1 post/reply every 1.5 seconds.
 ```py
 # Example code, creates a new post
 from ChatSelfbot import BotService
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    messages = BotService.MessageService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    messages = bot.MessageService
     messages.create_post("Hello everyone! I'm a selfbot.")
 ```
 
@@ -42,10 +43,11 @@ This function create a new reply to a public post, returns `(True, message_id)` 
 The rate limit (set by Chat, not by selfbot) is 1 post/reply every 1.5 seconds.
 ```py
 # Example code, creates and replies to a new post
-from ChatSelfbot import BotService
 import time
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    messages = BotService.MessageService
+from ChatSelfbot import BotService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    messages = bot.MessageService
     success, id = messages.create_post("Hello everyone! I'm a selfbot.")
     print(success)
     if success:
@@ -65,8 +67,9 @@ This function create a new reply to a public post, returns `True` if the request
 ```py
 # Example code, creates and likes a new post
 from ChatSelfbot import BotService
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    messages = BotService.MessageService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    messages = bot.MessageService
     success, id = messages.create_post("Hello everyone! I'm a selfbot.")
     print(success)
     if success:
@@ -83,8 +86,9 @@ This function edits a public post, returns `True` if the request succeeded and `
 ```py
 # Example code, creates a new post and edits it
 from ChatSelfbot import BotService
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    messages = BotService.MessageService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    messages = bot.MessageService
     success, id = messages.create_post("Hello everyone! I'm a selfbot.")
     print(success)
     if success:
@@ -100,10 +104,11 @@ MessageService.delete(message_id : str) -> bool
 This function deletes a public post, returns `True` if the request succeeded and `False` if the request failed.
 ```py
 # Example code, creates a new post and deletes it after 20 seconds
-from ChatSelfbot import BotService
 import time
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    messages = BotService.MessageService
+from ChatSelfbot import BotService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    messages = bot.MessageService
     success, id = messages.create_post("Hello everyone! I'm a selfbot.")
     print(success)
     if success:
@@ -121,9 +126,10 @@ This function sends a direct message to a user (you don't have to follow them), 
 ```py
 # Example code, send a dm to the creator of every new post
 from ChatSelfbot import BotService, Classes
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = BotService.ConnectionService
-    messages = BotService.MessageService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    connections = bot.ConnectionService
+    messages = bot.MessageService
     def f1(message: Classes.PublicMessage):
         messages.direct_message(message.sender, "What a funny post you just sent!")
     connections.bind_to_public_post(f1)
@@ -148,9 +154,10 @@ This function sends a message to a group chat, returns `True` if the request suc
 ```py
 # Example code, replies to new posts in a group chat
 from ChatSelfbot import BotService, Classes
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = BotService.ConnectionService
-    messages = BotService.MessageService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    connections = bot.ConnectionService
+    messages = bot.MessageService
     def f1(message: Classes.DMMessage):
         if message.groupname:
             messages.message_group_by_name(message.groupname, "I received a message!")
@@ -169,9 +176,10 @@ This function sends a message to a group chat, returns `True` if the request suc
 ```py
 # Example code, replies to new posts in a group chat
 from ChatSelfbot import BotService, Classes
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = BotService.ConnectionService
-    messages = BotService.MessageService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    connections = bot.ConnectionService
+    messages = bot.MessageService
     def f1(message: Classes.DMMessage):
         if message.groupname:
             messages.message_group_by_id(messages.get_group_id_by_name(message.groupname), "I received a message!")

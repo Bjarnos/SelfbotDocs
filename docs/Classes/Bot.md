@@ -35,7 +35,7 @@ A direct link to the [ProfileService](/docs/Services/ProfileService.md). For exa
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 ```py
-BotService.login(username : str, password : str, params : dict) -> bool
+Bot.login(username : str, password : str, params : dict) -> bool
 ```
 This function allows you to log in to your account, so that you can begin with using your selfbot. Returns True or False, True means login succesful and False means login failed.
 ```py

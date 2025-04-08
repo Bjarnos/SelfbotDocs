@@ -20,7 +20,7 @@ The BotService is a [service](/docs/Services/index.md) used to create new bots.
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 ```py
-BotService.login(username : str, password : str, params : dict) -> [Bot](https://google.com)
+BotService.create_bot(username : str, password : str, params : dict) -> [Bot](https://google.com)
 ```
 This function allows you to create new bots, returns a new [Bot](/docs/Class/Bot) object.
 ```py

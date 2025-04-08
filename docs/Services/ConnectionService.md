@@ -28,8 +28,9 @@ This function will run argument `func` every time that a new public post is crea
 ```py
 # Example code, likes every new message received
 from ChatSelfbot import BotService, Classes
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = BotService.ConnectionService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    connections = bot.ConnectionService
     def f1(message: Classes.PublicMessage):
         message.like()
     connections.bind_to_public_post(f1)
@@ -46,8 +47,9 @@ This function will run argument `func` every time that there's replied to the me
 ```py
 # Example code, likes every new reply
 from ChatSelfbot import BotService
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = BotService.ConnectionService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    connections = bot.ConnectionService
     def f1(message: Classes.PublicMessage):
         message.like()
     def f2(message: Classes.PublicMessage):
@@ -86,8 +88,9 @@ This function will run argument `func` every time that a new DM is received (inc
 ```py
 # Example code, responds with "Okay!" to every DM
 from ChatSelfbot import BotService, Classes
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = BotService.ConnectionService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    connections = bot.ConnectionService
     def f1(message: Classes.DMMessage):
         message.reply("Okay!")
     connections.bind_to_any_dm(f1)
@@ -106,8 +109,9 @@ This function will run argument `func` every time that a new DM is received from
 ```py
 # Example code, responds with "Okay!" to every DM from user 'Bjarnos'
 from ChatSelfbot import BotService, Classes
-if BotService.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = BotService.ConnectionService
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    connections = bot.ConnectionService
     def f1(message: Classes.DMMessage):
         message.reply("Okay!")
     connections.bind_to_user_dm("Bjarnos", f1)

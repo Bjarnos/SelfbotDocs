@@ -32,3 +32,19 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 else:
     print("log in failed")
 ```
+
+## BotService.toggle_show_http(value)
+<p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
+
+```py
+BotService.toggle_show_http(value : bool = True) -> bool
+```
+This function allows you to toggle whether http logs are printed or not. Returns input value.
+```py
+# Example code, sends a message and logs it
+from ChatSelfbot import BotService
+BotService.toggle_show_http(True)
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    bot.MessageService.create_post("Test post :)")
+```

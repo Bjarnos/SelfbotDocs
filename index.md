@@ -14,4 +14,4 @@ nav_order: 1
 Wish to collaborate with me on the project? My contacts are at [https://bjarnos.dev](https://bjarnos.dev)!
 
 {: .note }
-It is recommended to begin with reading [BotService](https://docs.bjarnos.dev/docs/Services/BotService), from there you will be redirected further through the documentation. Happy developing!
+It is recommended to begin with reading [BotService](/docs/Services/BotService), from there you will be redirected further through the documentation. Happy developing!

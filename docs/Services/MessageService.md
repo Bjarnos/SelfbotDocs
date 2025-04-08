@@ -20,10 +20,10 @@ The MessageService is a [service](/docs/Services/index.md) used to send and modi
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 ```py
-MessageService.create_post(message : str) -> bool
+MessageService.create_post(message : str) -> Tuple[bool, PublicMessage]
 ```
-This function create a new public post, returns `(True, message_id)` if the request succeeded and `(False, None)` if the request failed.
-The rate limit (set by Chat, not by selfbot) is 1 post/reply every 1.5 seconds.
+This function create a new public post, returns `(True, PublicMessage)` if the request succeeded and `(False, None)` if the request failed.
+The rate limit (set by Chat, not by selfbot) is 1 post/reply every 1.5 seconds. More about the [PublicMessage](/docs/Classes/PublicMessage) class.
 ```py
 # Example code, creates a new post
 from ChatSelfbot import BotService
@@ -37,10 +37,10 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 ```py
-MessageService.reply(message_id : str, message : str) -> Tuple[bool, str]
+MessageService.reply(message_id : str, message : str) -> Tuple[bool, PublicMessage]
 ```
-This function create a new reply to a public post, returns `(True, message_id)` if the request succeeded and `(False, "0")` if the request failed.
-The rate limit (set by Chat, not by selfbot) is 1 post/reply every 1.5 seconds.
+This function create a new reply to a public post, returns `(True, PublicMessage)` if the request succeeded and `(False, None)` if the request failed.
+The rate limit (set by Chat, not by selfbot) is 1 post/reply every 1.5 seconds. More about the [PublicMessage](/docs/Classes/PublicMessage) class.
 ```py
 # Example code, creates and replies to a new post
 import time
@@ -48,14 +48,13 @@ from ChatSelfbot import BotService
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     messages = bot.MessageService
-    success, id = messages.create_post("Hello everyone! I'm a selfbot.")
+    success, message_obj = messages.create_post("Hello everyone! I'm a selfbot.")
     print(success)
     if success:
         time.sleep(2)
-        success, id = messages.reply(id, "Replied!")
+        messages.reply(message_obj.id, "Replied!")
         print(success)
 ```
-
 
 ## MessageService.like()
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>

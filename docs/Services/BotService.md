@@ -17,7 +17,7 @@ nav_order: 1
 The BotService is a [service](/docs/Services/index.md) used to create new bots.
 
 ## BotService.create_bot()
-<p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
+<p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
 ```py
 BotService.create_bot(username : str, password : str, params : dict) -> Bot

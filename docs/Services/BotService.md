@@ -48,3 +48,6 @@ bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     bot.MessageService.create_post("Test post :)")
 ```
+
+{: .note }
+Read next: [Bot class](/docs/Classes/Bot).

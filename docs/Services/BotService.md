@@ -50,4 +50,4 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 ```
 
 {: .note }
-Read next: [Bot class](/docs/Classes/Bot).
+Read next: [Bot class](/docs/Classes/Bot)

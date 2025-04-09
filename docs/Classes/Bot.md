@@ -64,3 +64,6 @@ When set to `False`, the bot will ignore all of it's own messages when checking 
 
 ### force-first
 When you use [ConnectionService.start_checking_public()](/docs/Services/ConnectionService.html#connectionservicestart_checking_public) for the first time, the bot will run all bound functions for the last 10 minutes of messages. When `force-first` is `True`, the bot will read its own messages too (normally it won't). Use `check-own` to control the permanent reading of own messages.
+
+{: .note }
+You can choose which of the [services](/docs/Services/) you want to read now.

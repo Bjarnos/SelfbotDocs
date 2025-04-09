@@ -18,7 +18,7 @@ The ConnectionService is a [service](/docs/Services/index.md) used to run specif
 The service is split in 2 parts, Public Service (for handling public posts) and DM Service (for handling DMs/group chats).
 
 {: .note }
-It is recommended to check out the [PublicMessage](/docs/Classes/PublicMessage) and [DMMessage](/docs/Classes/DMMessage) classes, as they are referenced in this article.
+It is recommended to check out the [PublicMessage](/docs/Classes/PublicMessage) and [DMMessage](/docs/Classes/DMMessage) classes, as they are referenced in this article
 
 ## Public Service
 ### ConnectionService.bind_to_public_post()

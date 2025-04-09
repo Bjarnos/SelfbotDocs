@@ -16,6 +16,9 @@ nav_order: 3
 
 The MessageService is a [service](/docs/Services/index.md) used to send and modify messages.
 
+{: .note }
+It is recommended to check out the [PublicMessage](/docs/Classes/PublicMessage) and [DMMessage](/docs/Classes/DMMessage) classes, as they are referenced in this article.
+
 ## MessageService.create_post()
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 

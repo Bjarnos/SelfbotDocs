@@ -23,11 +23,11 @@ nav_order: 1
 ### Webserver variables
 When deploying the webserver:
 1. Make sure `Language` is `Python 3`
-2. The variable `Build Command` must be `pip install -r requirements.txt`
+2. The variable `Build Command` must be `pip install -r requirements.txt`  
   *(This means that all libraries in `requirements.txt` will be installed)*
-4. If there is a variable `Start Command`, set it to `gunicorn app:app & python3 -u bot.py & wait`, else you'll have to set up a [Procfile](#Content%20files)
+4. If there is a variable `Start Command`, set it to `gunicorn app:app & python3 -u bot.py & wait`, else you'll have to set up a [Procfile](#Content%20files)  
   *(This runs the python files `app.py` and `bot.py`)*
-5. You'll have to set up 2 environment variables. Set `user` to your Chat username, and `pass` to your Chat password
+5. You'll have to set up 2 environment variables. Set `user` to your Chat username, and `pass` to your Chat password  
   *(Store your login info to keep it safe, as your code might be visible to others)*
 
 *Need help with any of these steps? Contact me!*
@@ -76,7 +76,7 @@ web: gunicorn app:app & python3 -u bot.py & wait
 1. Go to [https://cron-job.org/en/](https://cron-job.org/en/) and sign up/log in
 2. Navigate to the [Dashboard](https://console.cron-job.org/dashboard) (should happen automatically)
 3. On the right top of your screen there's a button `CREATE CRONJOB`, click it
-4. Enter a title and set the `URL` to the url of your Web Service
+4. Enter a title and set the `URL` to the url of your Web Service  
    *(can't find the url of your Web Service? Contact me!)*
 5. Make sure the job is enabled and set the time to `Every 10 minutes` (don't use the standard 15!). If you use a different Cronjob than cron-job.org and it requires an expression, set it to `*/10 * * * *`
 6. Click `CREATE`, and you're done! Keep track of the cronjob from time to time because it might stop after failing too many times.
@@ -84,7 +84,7 @@ web: gunicorn app:app & python3 -u bot.py & wait
 ---
 
 ## Step 3. Your first code!
-*This example code is from `V1.1.0`, it may be outdated*
+*This example code is from `V1.1.0`, it may be outdated*  
 Go to `bot.py`, and set the code to this:
 ```py
 import dotenv, os

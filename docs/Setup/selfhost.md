@@ -39,11 +39,13 @@ print("Hello world!")
 ---
 
 ## Step 2. Your first code!
+*This example code is from `V1.1.0`, it may be outdated*
 Go to `bot.py`, and set the code to this (make sure to replace "username" with your username and "password" with your password!):
 ```py
 from ChatSelfbot import BotService
-if BotService.login("username", "password"):
-    messages = BotService.MessageService
+bot = BotService.create_bot()
+if bot.login("username", "password"):
+    messages = bot.MessageService
     messages.create_post("Hello! I am a selfbot :D")
 ```
 Run the command `py bot.py` again in your terminal and go to [Chat](https://chat.jonazwetsloot.nl/timeline?sort=time), did a new message by you appear? In that case you succesfully connected selfbot, read through the rest of the documentation to create the best selfbot of them all!

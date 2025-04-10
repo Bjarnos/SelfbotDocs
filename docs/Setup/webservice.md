@@ -84,16 +84,18 @@ web: gunicorn app:app & python3 -u bot.py & wait
 ---
 
 ## Step 3. Your first code!
+*This example code is from `V1.1.0`, it may be outdated*
 Go to `bot.py`, and set the code to this:
 ```py
 import dotenv, os
 from ChatSelfbot import BotService
+bot = BotService.create_bot()
 
 dotenv.load_dotenv()
 username = os.environ.get('user')
 password = os.environ.get('pass')
-if BotService.login(username, password):
-    messages = BotService.MessageService
+if bot.login(username, password):
+    messages = bot.MessageService
     messages.create_post("Hello! I am a selfbot :D")
 ```
 Now redeploy your service and go to [Chat](https://chat.jonazwetsloot.nl/timeline?sort=time), did a new message by you appear? In that case you succesfully connected selfbot, read through the rest of the documentation to create the best selfbot of them all!

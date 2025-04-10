@@ -1,4 +1,4 @@
----
+ ---
 title: Selfhost
 parent: Setup
 nav_order: 2
@@ -33,13 +33,13 @@ print("Hello world!")
 7. Run the command `.venv\Scripts\Activate` in the terminal, a green (.venv) tag will appear
 8. Go ahead and run `pip install ChatSelfbot`, this will install the newest verion of our library
 9. Now run `py bot.py` in the terminal (replace bot if you used a different name)
-10. Did it print hello world without errors? Great! Now continue step 2
+10. Did it print hello world without errors? Great! Now continue step 2  
     *(If there are errors, contact me!)*
 
 ---
 
 ## Step 2. Your first code!
-*This example code is from `V1.1.0`, it may be outdated*
+*This example code is from `V1.1.0`, it may be outdated*  
 Go to `bot.py`, and set the code to this (make sure to replace "username" with your username and "password" with your password!):
 ```py
 from ChatSelfbot import BotService

@@ -50,14 +50,10 @@ else:
 Possible params, as of V1.0.0 (values set are the standard values):
 ```py
 {
-  'http-log': False,
   'check-own': True,
   'force-first': False
 }
 ```
-
-### http-log
-When set to `True`, prints every http request and it's result code in the output.
 
 ### check-own
 When set to `False`, the bot will ignore all of it's own messages when checking public messages/replies.

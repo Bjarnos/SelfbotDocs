@@ -128,11 +128,12 @@ This function sends a direct message to a user (you don't have to follow them), 
 ```py
 # Example code, send a dm to the creator of every new post
 from ChatSelfbot import BotService, Classes
+PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections = bot.ConnectionService
     messages = bot.MessageService
-    def f1(message: Classes.PublicMessage):
+    def f1(message: PublicMessage):
         messages.direct_message(message.sender, "What a funny post you just sent!")
     connections.bind_to_public_post(f1)
     connections.start_checking_public()
@@ -156,11 +157,12 @@ This function sends a message to a group chat, returns `True` if the request suc
 ```py
 # Example code, replies to new posts in a group chat
 from ChatSelfbot import BotService, Classes
+DMMessage = Classes.DMMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections = bot.ConnectionService
     messages = bot.MessageService
-    def f1(message: Classes.DMMessage):
+    def f1(message: DMMessage):
         if message.groupname:
             messages.message_group_by_name(message.groupname, "I received a message!")
     connections.bind_to_any_dm(f1)
@@ -178,11 +180,12 @@ This function sends a message to a group chat, returns `True` if the request suc
 ```py
 # Example code, replies to new posts in a group chat
 from ChatSelfbot import BotService, Classes
+DMMessage = Classes.DMMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections = bot.ConnectionService
     messages = bot.MessageService
-    def f1(message: Classes.DMMessage):
+    def f1(message: DMMessage):
         if message.groupname:
             messages.message_group_by_id(messages.get_group_id_by_name(message.groupname), "I received a message!")
     connections.bind_to_any_dm(f1)

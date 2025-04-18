@@ -51,7 +51,8 @@ Possible params, as of V1.0.0 (values set are the standard values):
 ```py
 {
   'check-own': True,
-  'force-first': False
+  'force-first': False,
+  'dm-id-v2': False
 }
 ```
 
@@ -60,6 +61,9 @@ When set to `False`, the bot will ignore all of it's own messages when checking 
 
 ### force-first
 When you use [ConnectionService.start_checking_public()](/docs/Services/ConnectionService.html#connectionservicestart_checking_public) for the first time, the bot will run all bound functions for the last 10 minutes of messages. When `force-first` is `True`, the bot will read its own messages too (normally it won't). Use `check-own` to control the permanent reading of own messages.
+
+### dm-id-v2
+Uses a different way to send dm messages for if the normal way gets outdated, not recommended due to extra unwanted http requests.
 
 {: .note }
 You can choose which of the [services](/docs/Services/) you want to read now

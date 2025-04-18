@@ -1,4 +1,4 @@
- ---
+---
 title: Selfhost
 parent: Setup
 nav_order: 2

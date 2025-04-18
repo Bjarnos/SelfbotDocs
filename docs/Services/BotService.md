@@ -41,12 +41,11 @@ BotService.toggle_show_http(value : bool = True) -> bool
 ```
 This function allows you to toggle whether http logs are printed or not. Returns input value.
 ```py
-# Example code, sends a message and logs it
+# Example code, logs in which will show a few http requests
 from ChatSelfbot import BotService
 BotService.toggle_show_http(True)
 bot = BotService.create_bot()
-if bot.login("USERNAME HERE", "PASSWORD HERE"):
-    bot.MessageService.create_post("Test post :)")
+bot.login("USERNAME HERE", "PASSWORD HERE")
 ```
 
 {: .note }

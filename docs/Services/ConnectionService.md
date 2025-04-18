@@ -31,10 +31,11 @@ This function will run argument `func` every time that a new public post is crea
 ```py
 # Example code, likes every new message received
 from ChatSelfbot import BotService, Classes
+PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections = bot.ConnectionService
-    def f1(message: Classes.PublicMessage):
+    def f1(message: PublicMessage):
         message.like()
     connections.bind_to_public_post(f1)
     connections.start_checking_public() # required!
@@ -49,13 +50,14 @@ ConnectionService.bind_to_message_reply(message_id : str, func : function) -> No
 This function will run argument `func` every time that there's replied to the message with id message_id, and pass a [PublicMessage](/docs/Classes/PublicMessage) (the reply) as the first argument.
 ```py
 # Example code, likes every new reply
-from ChatSelfbot import BotService
+from ChatSelfbot import BotService, Classes
+PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections = bot.ConnectionService
-    def f1(message: Classes.PublicMessage):
+    def f1(message: PublicMessage):
         message.like()
-    def f2(message: Classes.PublicMessage):
+    def f2(message: PublicMessage):
         connections.bind_to_message_reply(message.id, f1)
     connections.bind_to_public_post(f2)
     connections.start_checking_public() # required!
@@ -91,10 +93,11 @@ This function will run argument `func` every time that a new DM is received (inc
 ```py
 # Example code, responds with "Okay!" to every DM
 from ChatSelfbot import BotService, Classes
+DMMessage = Classes.DMMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections = bot.ConnectionService
-    def f1(message: Classes.DMMessage):
+    def f1(message: DMMessage):
         message.reply("Okay!")
     connections.bind_to_any_dm(f1)
     connections.start_checking_dms() # required!
@@ -112,10 +115,11 @@ This function will run argument `func` every time that a new DM is received from
 ```py
 # Example code, responds with "Okay!" to every DM from user 'Bjarnos'
 from ChatSelfbot import BotService, Classes
+DMMessage = Classes.DMMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections = bot.ConnectionService
-    def f1(message: Classes.DMMessage):
+    def f1(message: DMMessage):
         message.reply("Okay!")
     connections.bind_to_user_dm("Bjarnos", f1)
     connections.start_checking_dms() # required!

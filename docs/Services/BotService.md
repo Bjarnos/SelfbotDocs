@@ -22,7 +22,7 @@ The BotService is a [service](/docs/Services/index.md) used to create new bots.
 ```py
 BotService.create_bot(username : str, password : str, params : dict) -> Bot
 ```
-This function allows you to create new bots, returns a new [Bot](/docs/Class/Bot) object.
+This function allows you to create new bots, returns a new [Bot](/docs/Classes/Bot) object.
 ```py
 # Example code
 from ChatSelfbot import BotService

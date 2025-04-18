@@ -1,0 +1,17 @@
+---
+title: PublicMessage
+parent: Classes
+nav_order: 2
+---
+
+# BotService
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+The PublicMessage class is a [class](/docs/Classes/index.md) that contains data and useful functions for a sent message.

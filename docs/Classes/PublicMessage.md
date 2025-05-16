@@ -119,7 +119,7 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 
 The same as [MessageService.reply()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicereply), but the message_id is automatically filled.
 ```py
-# Example code, likes every new post
+# Example code, replies to every new post
 from ChatSelfbot import BotService, Classes
 PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
@@ -131,5 +131,42 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections.start_checking_public() # required!
 ```
 
+## edit()
+<p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
+
+The same as [MessageService.edit()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageserviceedit), but the message_id is automatically filled.
+```py
+# Example code, creates and edits a new post
+import time
+from ChatSelfbot import BotService, Classes
+PublicMessage = Classes.PublicMessage
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    messages = bot.MessageService
+    success, m = messages.create_post("Hello everyone! I'm a selfbot.")
+    if success:
+        time.sleep(20)
+        m.edit("Nevermind, I'm not")
+```
+
+## delete()
+<p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
+
+The same as [MessageService.delete()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageserviceedit), but the message_id is automatically filled.
+```py
+# Example code, creates and deletes a new post
+import time
+from ChatSelfbot import BotService, Classes
+PublicMessage = Classes.PublicMessage
+bot = BotService.create_bot()
+if bot.login("USERNAME HERE", "PASSWORD HERE"):
+    messages = bot.MessageService
+    success, m = messages.create_post("Hello everyone! I'm a selfbot.")
+    if success:
+        time.sleep(20)
+        m.delete()
+```
+
+## bind_to_reply()
 Please note that this function does not work as of V1.2.1, please use [ConnectionService.bind_to_message_reply](https://docs.bjarnos.dev/docs/Services/ConnectionService.html#connectionservicebind_to_message_reply)!
 {: .warning }

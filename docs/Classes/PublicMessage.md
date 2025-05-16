@@ -105,7 +105,10 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 ## like()
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
-The same as [MessageService.like()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicelike), but the message_id is automatically filled.
+```py
+PublicMessage.like() -> bool
+```
+The same as [MessageService.like()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicelike), but the message_id is automatically filled. Returns success.
 ```py
 # Example code, likes every new post
 from ChatSelfbot import BotService, Classes
@@ -122,7 +125,10 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 ## reply()
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
-The same as [MessageService.reply()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicereply), but the message_id is automatically filled.
+```py
+PublicMessage.reply(message : str) -> bool, PublicMessage
+```
+The same as [MessageService.reply()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicereply), but the message_id is automatically filled. Returns success, messsage object.
 ```py
 # Example code, replies to every new post
 from ChatSelfbot import BotService, Classes
@@ -139,7 +145,10 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 ## edit()
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
-The same as [MessageService.edit()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageserviceedit), but the message_id is automatically filled.
+```py
+PublicMessage.edit(message : str) -> bool
+```
+The same as [MessageService.edit()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageserviceedit), but the message_id is automatically filled. Returns success.
 ```py
 # Example code, creates and edits a new post
 import time
@@ -157,7 +166,10 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 ## delete()
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
-The same as [MessageService.delete()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageserviceedit), but the message_id is automatically filled.
+```py
+PublicMessage.delete() -> bool
+```
+The same as [MessageService.delete()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageserviceedit), but the message_id is automatically filled. Returns success.
 ```py
 # Example code, creates and deletes a new post
 import time

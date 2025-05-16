@@ -113,5 +113,5 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
         messages.like(id)
 ```
 
+Please note that this function does not work as of V1.2.1, please use [ConnectionService.bind_to_message_reply](https://docs.bjarnos.dev/docs/Services/ConnectionService.html#connectionservicebind_to_message_reply)!
 {: .warning }
-Please not that this function does not work as of V1.2.1, please use [ConnectionService.bind_to_message_reply](https://docs.bjarnos.dev/docs/Services/ConnectionService.html#connectionservicebind_to_message_reply)!

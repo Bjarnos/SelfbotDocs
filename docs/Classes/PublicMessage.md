@@ -19,6 +19,7 @@ The PublicMessage class is a [class](/docs/Classes/index.md) that contains data 
 ## Variables
 ### time
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
+
 The epoch time that the publicmessage was sent, as float. 0 or None if an error occures.
 ```py
 # Example code, prints the time of every new public post
@@ -35,6 +36,7 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 
 ### text
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
+
 The content text of a message, without markdown.
 ```py
 # Example code, prints the content of every new public post
@@ -51,6 +53,7 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 
 ### markdowntext
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
+
 The original text of a message, including markdown.
 ```py
 # Example code, prints the original text of every new public post
@@ -67,6 +70,7 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 
 ### sender
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
+
 The name of the sender of the message.
 ```py
 # Example code, prints the sender name of every new public post
@@ -83,6 +87,7 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 
 ### id
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
+
 The id of a message commonly used for replies.
 ```py
 # Example code, prints the id of every new public post

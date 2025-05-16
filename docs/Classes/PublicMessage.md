@@ -20,8 +20,6 @@ The PublicMessage class is a [class](/docs/Classes/index.md) that contains data 
 ### time
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 The epoch time that the publicmessage was sent, as float. 0 or None if an error occures.
-{: .warning }
-Please not that this function does not work as of V1.2.1, please use [ConnectionService.bind_to_message_reply](https://docs.bjarnos.dev/docs/Services/ConnectionService.html#connectionservicebind_to_message_reply)!
 ```py
 # Example code, prints the time of every new public post
 from ChatSelfbot import BotService, Classes
@@ -115,3 +113,5 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
         messages.like(id)
 ```
 
+{: .warning }
+Please not that this function does not work as of V1.2.1, please use [ConnectionService.bind_to_message_reply](https://docs.bjarnos.dev/docs/Services/ConnectionService.html#connectionservicebind_to_message_reply)!

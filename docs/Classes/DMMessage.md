@@ -5,7 +5,7 @@ parent: Classes
 nav_order: 3
 ---
 
-# BotService
+# DMMessage
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -15,41 +15,39 @@ nav_order: 3
 
 ---
 
+This page is not done yet! It will contain incorrect and incomplete info
+{: .note }
+
 The DMMessage class is a [class](/docs/Classes/index.md) that contains data and useful functions for a sent message in DMs.
 
 ## Variables
 ### time
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
-The epoch time that the publicmessage was sent, as float. 0 or None if an error occures.
+The epoch time that the dmmessage was sent, as float. 0 or None if an error occures.
 ```py
-# Example code, prints the time of every new public post
+# Example code, prints the time of a new dm
 from ChatSelfbot import BotService, Classes
-PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = bot.ConnectionService
-    def f1(message: PublicMessage):
-        print(message.time)
-    connections.bind_to_public_post(f1)
-    connections.start_checking_public() # required!
+    messages = bot.MessageService
+    success, message = messages.direct_message("ChatSelfbot", "Hello!")
+    print(message.time)
 ```
 
 ### text
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
+<p style="font-size: 0.8rem; color: #6c757d;"><b>Aliases:</b> content</p>
 
 The content text of a message, without markdown.
 ```py
-# Example code, prints the content of every new public post
+# Example code, prints the text of a new dm
 from ChatSelfbot import BotService, Classes
-PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = bot.ConnectionService
-    def f1(message: PublicMessage):
-        print(message.text)
-    connections.bind_to_public_post(f1)
-    connections.start_checking_public() # required!
+    messages = bot.MessageService
+    success, message = messages.direct_message("ChatSelfbot", "Hello!")
+    print(message.text)
 ```
 
 ### markdowntext
@@ -57,16 +55,13 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 
 The original text of a message, including markdown.
 ```py
-# Example code, prints the original text of every new public post
+# Example code, prints the original text of a new dm
 from ChatSelfbot import BotService, Classes
-PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = bot.ConnectionService
-    def f1(message: PublicMessage):
-        print(message.markdowntext)
-    connections.bind_to_public_post(f1)
-    connections.start_checking_public() # required!
+    messages = bot.MessageService
+    success, message = messages.direct_message("ChatSelfbot", "Hello!")
+    print(message.markdowntext)
 ```
 
 ### sender
@@ -74,33 +69,27 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 
 The name of the sender of the message.
 ```py
-# Example code, prints the sender name of every new public post
+# Example code, prints the sender name of a new dm
 from ChatSelfbot import BotService, Classes
-PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = bot.ConnectionService
-    def f1(message: PublicMessage):
-        print(message.sender)
-    connections.bind_to_public_post(f1)
-    connections.start_checking_public() # required!
+    messages = bot.MessageService
+    success, message = messages.direct_message("ChatSelfbot", "Hello!")
+    print(message.sender)
 ```
 
 ### id
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
-The id of a message commonly used for replies.
+The id of a message, this can not be used for anything except for identifying incoming messages.
 ```py
-# Example code, prints the id of every new public post
+# Example code, prints the id of a new dm
 from ChatSelfbot import BotService, Classes
-PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
-    connections = bot.ConnectionService
-    def f1(message: PublicMessage):
-        print(message.id)
-    connections.bind_to_public_post(f1)
-    connections.start_checking_public() # required!
+    messages = bot.MessageService
+    success, message = messages.direct_message("ChatSelfbot", "Hello!")
+    print(message.id) # prints "0" because the dm was just sent
 ```
 
 ## like()
@@ -127,7 +116,7 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
 ```py
-PublicMessage.reply(message : str) -> bool, PublicMessage
+PublicMessage.reply(message : str) -> Tuple[bool, PublicMessage]
 ```
 The same as [MessageService.reply()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicereply), but the message_id is automatically filled. Returns success, messsage object.
 ```py

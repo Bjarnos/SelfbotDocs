@@ -111,6 +111,7 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
     def f1(message: PublicMessage):
         message.like()
     connections.bind_to_public_post(f1)
+    connections.start_checking_public() # required!
 ```
 
 ## reply()
@@ -127,6 +128,7 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
     def f1(message: PublicMessage):
         message.reply("Hello, new post!")
     connections.bind_to_public_post(f1)
+    connections.start_checking_public() # required!
 ```
 
 Please note that this function does not work as of V1.2.1, please use [ConnectionService.bind_to_message_reply](https://docs.bjarnos.dev/docs/Services/ConnectionService.html#connectionservicebind_to_message_reply)!

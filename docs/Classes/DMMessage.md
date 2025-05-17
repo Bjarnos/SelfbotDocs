@@ -14,9 +14,6 @@ nav_order: 3
 
 ---
 
-This page is not done yet! It will contain incorrect and incomplete info
-{: .note }
-
 The DMMessage class is a [class](/docs/Classes/index.md) that contains data and useful functions for a sent message in DMs.
 
 ## Variables
@@ -91,24 +88,22 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
     print(message.id) # prints "0" because the dm was just sent
 ```
 
-## like()
+### groupname
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
+The name of the group the message was sent in, if it was in one. "" or None if no groupname can be found.
 ```py
-PublicMessage.like() -> bool
-```
-The same as [MessageService.like()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicelike), but the message_id is automatically filled. Returns success.
-```py
-# Example code, likes every new post
-from ChatSelfbot import BotService, Classes
-PublicMessage = Classes.PublicMessage
+# Example code, prints the groupname of incoming dms
+from ChatSelfbot import BotService
+BotService.toggle_show_http()
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections = bot.ConnectionService
-    def f1(message: PublicMessage):
-        message.like()
-    connections.bind_to_public_post(f1)
-    connections.start_checking_public() # required!
+    def f1(message):
+        print(message.groupname)
+
+    connections.bind_to_any_dm(f1)
+    connections.start_checking_dms()
 ```
 
 ## reply()
@@ -117,62 +112,17 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 ```py
 PublicMessage.reply(message : str) -> Tuple[bool, PublicMessage]
 ```
-The same as [MessageService.reply()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicereply), but the message_id is automatically filled. Returns success, messsage object.
+Reply to a dm, this works different than [MessageService.reply()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicereply), which is only meant for public posts!.
 ```py
-# Example code, replies to every new post
+# Example code, replies to incoming dms
 from ChatSelfbot import BotService, Classes
-PublicMessage = Classes.PublicMessage
+DMMessage = Classes.DMMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections = bot.ConnectionService
-    def f1(message: PublicMessage):
-        message.reply("Hello, new post!")
-    connections.bind_to_public_post(f1)
-    connections.start_checking_public() # required!
-```
+    def f1(message: DMMessage):
+        message.reply("Thanks for your dm!")
 
-## edit()
-<p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
-
-```py
-PublicMessage.edit(message : str) -> bool
+    connections.bind_to_any_dm(f1)
+    connections.start_checking_dms()
 ```
-The same as [MessageService.edit()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageserviceedit), but the message_id is automatically filled. Returns success.
-```py
-# Example code, creates and edits a new post
-import time
-from ChatSelfbot import BotService, Classes
-PublicMessage = Classes.PublicMessage
-bot = BotService.create_bot()
-if bot.login("USERNAME HERE", "PASSWORD HERE"):
-    messages = bot.MessageService
-    success, m = messages.create_post("Hello everyone! I'm a selfbot.")
-    if success:
-        time.sleep(20)
-        m.edit("Nevermind, I'm not")
-```
-
-## delete()
-<p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
-
-```py
-PublicMessage.delete() -> bool
-```
-The same as [MessageService.delete()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageserviceedit), but the message_id is automatically filled. Returns success.
-```py
-# Example code, creates and deletes a new post
-import time
-from ChatSelfbot import BotService, Classes
-PublicMessage = Classes.PublicMessage
-bot = BotService.create_bot()
-if bot.login("USERNAME HERE", "PASSWORD HERE"):
-    messages = bot.MessageService
-    success, m = messages.create_post("Hello everyone! I'm a selfbot.")
-    if success:
-        time.sleep(20)
-        m.delete()
-```
-
-## bind_to_reply()
-Please note that this function does not work as of V1.2.1, please use [ConnectionService.bind_to_message_reply](https://docs.bjarnos.dev/docs/Services/ConnectionService.html#connectionservicebind_to_message_reply)!
-{: .warning }

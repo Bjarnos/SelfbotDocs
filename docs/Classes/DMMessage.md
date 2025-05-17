@@ -1,4 +1,3 @@
-
 ---
 title: DMMessage
 parent: Classes

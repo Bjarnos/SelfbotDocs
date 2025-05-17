@@ -13,5 +13,13 @@ nav_order: 1
 ## Collaborate
 Wish to collaborate with me on the project? My contacts are at [https://bjarnos.dev](https://bjarnos.dev)!
 
+## Soon
+Big things updating soon:
+- ProfileService
+- DataService
+- Token refresh
+- Multiple page support
+- More stuff with message ids
+
 {: .note }
 It is highly recommended that you begin with reading [BotService](/docs/Services/BotService), from there you will be redirected further through the documentation. Happy developing!

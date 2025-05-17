@@ -47,7 +47,7 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 ```py
 ConnectionService.bind_to_message_reply(message_id : str, func : function) -> None
 ```
-This function will run argument `func` every time that there's replied to the message with id message_id, and pass a [PublicMessage](/docs/Classes/PublicMessage) (the reply) as the first argument.
+This function will run argument `func` every time that there's replied to the message with id message_id, and pass a [PublicMessage](/docs/Classes/PublicMessage) (the reply) as the first argument. This function is recursive, will be fixed soon!
 ```py
 # Example code, likes every new reply
 from ChatSelfbot import BotService, Classes
@@ -62,7 +62,7 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
     connections.bind_to_public_post(f2)
     connections.start_checking_public() # required!
 ```
-*Note that this example code can be done more effective with [PublicMessage.bind_to_reply()](#empty)*
+*Note that this example code can be done more effective with [PublicMessage.bind_to_reply()](https://docs.bjarnos.dev/docs/Classes/PublicMessage.html#bind_to_reply)*
 
 ### ConnectionService.start_checking_public()
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>

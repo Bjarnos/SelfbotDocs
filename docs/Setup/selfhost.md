@@ -16,6 +16,9 @@ nav_order: 2
 
 *We expect that you are using Visual Studio Code to selfhost, with all python extensions installed*
 
+## Video tutorial
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tZuzdi11_N4?si=UafaKfqNAbzfN2l9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Step 1. Install required libraries
 
 ### Virtual environment

@@ -4,7 +4,7 @@ parent: Classes
 nav_order: 1
 ---
 
-# BotService
+# Bot
 
 ## Table of contents
 {: .no_toc .text-delta }

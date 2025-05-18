@@ -5,7 +5,7 @@
 <script>
 async function ask() {
   const q = document.getElementById("question").value;
-  const res = await fetch("/ask", {
+  const res = await fetch("superior-ketti-infinitymagicstudios-2e86b9f5.koyeb.app/ask", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ question: q })

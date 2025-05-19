@@ -18,8 +18,7 @@ Things coming soon:
 - ProfileService (done, requires docs)
 - DataService
 - MessageService.get_message_by_id()
-- Token refresh
-- Multiple page support
+- Improve MessageService.bind_to_message_reply()
 
 {: .note }
 It is highly recommended that you begin with reading [BotService](/docs/Services/BotService), from there you will be redirected further through the documentation. Happy developing!

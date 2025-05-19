@@ -23,9 +23,9 @@ It is recommended to check out the [PublicMessage](/docs/Classes/PublicMessage) 
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 ```py
-MessageService.create_post(message : str) -> Tuple[bool, PublicMessage]
+MessageService.create_post(message : str) -> PublicMessage
 ```
-This function create a new public post, returns `(True, PublicMessage)` if the request succeeded and `(False, None)` if the request failed.
+This function create a new public post, returns a `PublicMessage` if the request succeeded and `None` if the request failed.
 The rate limit (set by Chat, not by selfbot) is 1 post/reply every 1.5 seconds. More about the [PublicMessage](/docs/Classes/PublicMessage) class.
 ```py
 # Example code, creates a new post
@@ -40,9 +40,9 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 ```py
-MessageService.reply(message_id : str, message : str) -> Tuple[bool, PublicMessage]
+MessageService.reply(message_id : str, message : str) -> PublicMessage
 ```
-This function create a new reply to a public post, returns `(True, PublicMessage)` if the request succeeded and `(False, None)` if the request failed.
+This function create a new reply to a public post, returns a `PublicMessage` if the request succeeded and `None` if the request failed.
 The rate limit (set by Chat, not by selfbot) is 1 post/reply every 1.5 seconds. More about the [PublicMessage](/docs/Classes/PublicMessage) class.
 ```py
 # Example code, creates and replies to a new post

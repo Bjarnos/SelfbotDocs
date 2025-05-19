@@ -51,12 +51,10 @@ from ChatSelfbot import BotService
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     messages = bot.MessageService
-    success, message_obj = messages.create_post("Hello everyone! I'm a selfbot.")
-    print(success)
-    if success:
+    message_obj = messages.create_post("Hello everyone! I'm a selfbot.")
+    if message_obj:
         time.sleep(2)
         messages.reply(message_obj.id, "Replied!")
-        print(success)
 ```
 
 ## MessageService.like()
@@ -72,10 +70,9 @@ from ChatSelfbot import BotService
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     messages = bot.MessageService
-    success, id = messages.create_post("Hello everyone! I'm a selfbot.")
-    print(success)
-    if success:
-        messages.like(id)
+    message_obj = messages.create_post("Hello everyone! I'm a selfbot.")
+    if message_obj:
+        messages.like(message_obj.id)
 ```
 
 ## MessageService.edit()
@@ -91,10 +88,9 @@ from ChatSelfbot import BotService
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     messages = bot.MessageService
-    success, id = messages.create_post("Hello everyone! I'm a selfbot.")
-    print(success)
-    if success:
-        messages.edit(id, "[deleted]") # this does not actually delete it
+    message_obj = messages.create_post("Hello everyone! I'm a selfbot.")
+    if message_obj:
+        messages.edit(message_obj.id, "This message was edited ;)")
 ```
 
 ## MessageService.delete()
@@ -111,11 +107,10 @@ from ChatSelfbot import BotService
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     messages = bot.MessageService
-    success, id = messages.create_post("Hello everyone! I'm a selfbot.")
-    print(success)
-    if success:
+    message_obj = messages.create_post("Hello everyone! I'm a selfbot.")
+    if message_obj:
         time.sleep(20)
-        messages.delete(id)
+        messages.delete(message_obj.id)
 ```
 
 ## MessageService.direct_message()

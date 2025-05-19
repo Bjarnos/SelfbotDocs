@@ -110,9 +110,9 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
 ```py
-PublicMessage.reply(message : str) -> Tuple[bool, PublicMessage]
+PublicMessage.reply(message : str) -> DMMessage
 ```
-Reply to a dm, this works different than [MessageService.reply()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicereply), which is only meant for public posts!.
+Reply to a dm, this works different than [MessageService.reply()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicereply), which is only meant for public posts! Returns a `DMMessage` if the request succeeded, or `None` if it failed
 ```py
 # Example code, replies to incoming dms
 from ChatSelfbot import BotService, Classes

@@ -126,9 +126,9 @@ if bot.login("USERNAME HERE", "PASSWORD HERE"):
 <p style="font-size: 0.9rem; color: #6c757d;">V1.1.0+</p>
 
 ```py
-PublicMessage.reply(message : str) -> Tuple[bool, PublicMessage]
+PublicMessage.reply(message : str) -> PublicMessage
 ```
-The same as [MessageService.reply()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicereply), but the message_id is automatically filled. Returns success, messsage object.
+The same as [MessageService.reply()](https://docs.bjarnos.dev/docs/Services/MessageService.html#messageservicereply), but the message_id is automatically filled. Returns a `PublicMessage` if the request succeeded and `None` if the request failed.
 ```py
 # Example code, replies to every new post
 from ChatSelfbot import BotService, Classes

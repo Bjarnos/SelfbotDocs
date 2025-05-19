@@ -157,8 +157,8 @@ PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     messages = bot.MessageService
-    success, m = messages.create_post("Hello everyone! I'm a selfbot.")
-    if success:
+    m = messages.create_post("Hello everyone! I'm a selfbot.")
+    if m:
         time.sleep(20)
         m.edit("Nevermind, I'm not")
 ```
@@ -178,8 +178,8 @@ PublicMessage = Classes.PublicMessage
 bot = BotService.create_bot()
 if bot.login("USERNAME HERE", "PASSWORD HERE"):
     messages = bot.MessageService
-    success, m = messages.create_post("Hello everyone! I'm a selfbot.")
-    if success:
+    m = messages.create_post("Hello everyone! I'm a selfbot.")
+    if m:
         time.sleep(20)
         m.delete()
 ```

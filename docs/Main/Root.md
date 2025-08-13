@@ -4,7 +4,7 @@ parent: Main
 nav_order: 2
 ---
 
-# Root
+These are all methods directly derived from the library's root.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -12,15 +12,13 @@ nav_order: 2
 1. TOC
 {:toc}
 
----
-
-These are all methods directly derived from the library's root.
-
 {: .note }
 It is recommended to check out the [Bot](/docs/Main/Bot.md) and [Bot](/docs/Main/Bot.md) classes, as they are referenced in this article
 
-## Methods
-### ChatSelfbot.create_session()
+---
+
+# Methods
+## ChatSelfbot.create_session()
 <p style="font-size: 0.9rem; color: #6c757d;">V1.0.0+</p>
 
 ```py

@@ -1,6 +1,6 @@
 ---
 title: BotService
-parent: Services
+parent: Methods
 nav_order: 1
 ---
 

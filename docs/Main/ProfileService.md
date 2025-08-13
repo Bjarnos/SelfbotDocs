@@ -1,6 +1,6 @@
 ---
 title: ProfileService
-parent: Services
+parent: Main
 nav_order: 4
 ---
 

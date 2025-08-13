@@ -1,6 +1,6 @@
 ---
 title: ConnectionService
-parent: Services
+parent: Main
 nav_order: 2
 ---
 
